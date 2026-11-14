@@ -1,0 +1,12 @@
+Ben profesyonel, üretime uygun, savunma odaklı bir antivirüs uygulaması tasarlamak ve temel çalışan bileşenlerini oluşturmak istiyorum. Sonuçlar Windows masaüstü hedefli olacak, UI Electron/Node tabanlı, çekirdek tespit motoru ve gerçek zamanlı izleme native C++ (ve/veya C#) olacak şekilde öner ve örnek kod sağla. Aşağıyı eksiksiz karşıla:
+
+- Mimari ve bileşenler: gerçek zamanlı dosya izleyici (kernel filter veya user-mode watcher), imza tabanlı tarama (imza veritabanı formatı), heuristik/istatistiksel skorlayıcı, davranış tabanlı engine (anomaly/behavior), karantina yönetimi, güncelleme/uygulama imzası, loglama ve telemetri (gizlilik kurallarına uyularak).
+- Güvenlik/uygulama kuralları: en düşük yetki, kod imzalama, paket bütünlüğü, güncelleme doğrulama, kullanıcı verisi anonimleştirme, kritik işlemler için onay/administrator uyarıları.
+- Performans hedefleri: CPU < 2% idle yük artışı, minimal I/O overhead, paralel tarama, streaming tarama, bellek sınırları ve throttle stratejileri.
+- Yönlendirme: Windows için kernel-mode filtre sürücüsüne ihtiyaç varsa gereklilikleri ve alternatif (user-mode + USN/ReadDirectoryChangesW) yaklaşımlarını belirt, imza/heuristic hibrit öner.
+- Teşvik et: örnek implementasyon iskeleti; Electron/Node tarafında `engine_bridge.js` ile native motor arasında IPC örneği, C++ tarafında basit bir imza tarayıcı iskeleti ve örnek imza JSON formatı, karantina dosya yönetimi `quarantine_manager.js` API örneği.
+- Test & CI: birim testler, entegrasyon testleri, fuzzing önerileri, performans benchmark komutları, güvenlik kod inceleme checklist.
+- Çıktı formatı: 1) kısa mimari dokümanı, 2) dosya/dizin listesi ve hangi dilde olacağı, 3) minimal ama çalıştırılabilir örnek kod parçaları (UI <-> engine iletişimi, basit dosya tarayıcı), 4) güvenlik ve dağıtım adımları (kod imzalama, installer, güncelleme imzası).
+- Kısıtlama: hiçbir öneri veya örnek yıkıcı/malware işlevi (dosya şifreleme, veri imha, arka kapı) içermemeli; sadece savunma/tespit/ayıklama işlevleri verilmeli.
+
+Bu talimatlara göre mimari, dosya şablonları, örnek kod parçaları ve CI/test adımlarını Türkçe olarak hazırla. İki dil desteği olacak: Türkçe (tr) ve Korece (ko). UI mevcut `i18n.js` ile entegre edilecek. Lütfen verileri `docs/` dizinine dört dosya olarak ekle: LLM prompt (TR/KO) ve Architecture brief (TR/KO).

@@ -1,0 +1,11 @@
+<!-- CSS Logo SVG - Modern minimal design -->
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="64" height="64" fill="#1572B6" rx="8"/>
+
+  <!-- CSS Text -->
+  <text x="32" y="42" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">CSS</text>
+
+  <!-- Optional: subtle accent line -->
+  <line x1="12" y1="48" x2="52" y2="48" stroke="white" stroke-width="2" opacity="0.3"/>
+</svg>
