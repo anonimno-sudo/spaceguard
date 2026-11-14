@@ -1,0 +1,11 @@
+{
+  "name": "spaceguard-sovereign-edition",
+  "version": "26.2.0",
+  "description": "SPACEGuard Sovereign Edition",
+  "main": "main.js",
+  "author": "SPACE Security Labs",
+  "copyright": "Copyright © 2026 SPACE Security Labs. All rights reserved.",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

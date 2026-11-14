@@ -1,0 +1,58 @@
+/* SPACEGuard — Local icon fallback when CDN unavailable */
+/* Uses Unicode/emoji fallbacks for nav icons so they always show */
+
+.nav-link i.fa-solid { font-style: normal; }
+
+/* If FontAwesome fails to load, show text fallbacks */
+.fa-house::before          { content: "⌂"; }
+.fa-shield-halved::before  { content: "🛡"; }
+.fa-box-archive::before    { content: "📦"; }
+.fa-broom::before          { content: "🧹"; }
+.fa-tower-broadcast::before{ content: "📡"; }
+.fa-globe::before          { content: "🌐"; }
+.fa-bug::before            { content: "🐛"; }
+.fa-ban::before            { content: "🚫"; }
+.fa-power-off::before      { content: "⏻"; }
+.fa-envelope-circle-check::before { content: "✉"; }
+.fa-screwdriver-wrench::before    { content: "🔧"; }
+.fa-newspaper::before      { content: "📰"; }
+.fa-sliders::before        { content: "⚙"; }
+.fa-crown::before          { content: "♛"; }
+.fa-shield-cat::before     { content: "🛡"; }
+.fa-spinner::before        { content: "↻"; }
+.fa-magnifying-glass::before { content: "🔍"; }
+.fa-circle-check::before   { content: "✓"; }
+.fa-triangle-exclamation::before { content: "⚠"; }
+.fa-clock::before          { content: "🕐"; }
+.fa-chart-line::before     { content: "📈"; }
+.fa-language::before       { content: "Aa"; }
+.fa-filter-circle-xmark::before { content: "⊗"; }
+.fa-desktop::before        { content: "🖥"; }
+.fa-rocket::before         { content: "🚀"; }
+.fa-virus-slash::before    { content: "🦠"; }
+.fa-server::before         { content: "🖧"; }
+.fa-gauge-high::before     { content: "⚡"; }
+.fa-layer-group::before    { content: "⊞"; }
+.fa-file-shield::before    { content: "📄"; }
+.fa-earth-americas::before { content: "🌎"; }
+.fa-bolt-lightning::before { content: "⚡"; }
+.fa-hard-drive::before     { content: "💾"; }
+.fa-microscope::before     { content: "🔬"; }
+.fa-rotate-right::before   { content: "↻"; }
+.fa-trash-can-arrow-up::before { content: "🗑"; }
+.fa-cloud-arrow-down::before   { content: "☁"; }
+.fa-download::before       { content: "↓"; }
+.fa-eye::before            { content: "👁"; }
+.fa-gamepad::before        { content: "🎮"; }
+.fa-building-columns::before   { content: "🏛"; }
+.fa-network-wired::before  { content: "🌐"; }
+.fa-lock::before           { content: "🔒"; }
+.fa-link::before           { content: "🔗"; }
+.fa-link-slash::before     { content: "✂"; }
+.fa-satellite-dish::before { content: "📡"; }
+.fa-clock-rotate-left::before  { content: "⏮"; }
+.fa-bitcoin::before        { content: "₿"; }
+.fa-list::before           { content: "≡"; }
+.fa-clipboard-check::before    { content: "📋"; }
+.fa-magnifying-glass-arrow-right::before { content: "🔎"; }
+.fa-toggle-off::before     { content: "⏺"; }

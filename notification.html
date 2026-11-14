@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    @font-face {
+      font-family: 'SPACE';
+      src: url('SPACE.ttf') format('truetype');
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'SPACE', 'Segoe UI', sans-serif;
+      background: transparent;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    #notif {
+      width: 400px;
+      background: rgba(10, 14, 26, 0.97);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-left: 4px solid #c9a227;
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+      animation: slideIn 0.3s ease;
+    }
+
+    #notif.danger  { border-left-color: #ff4444; }
+    #notif.success { border-left-color: #00ff88; }
+    #notif.info    { border-left-color: #4499ff; }
+    #notif.warning { border-left-color: #c9a227; }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    #icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .danger  #icon { color: #ff4444; }
+    .success #icon { color: #00ff88; }
+    .info    #icon { color: #4499ff; }
+    .warning #icon { color: #c9a227; }
+
+    #title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+
+    #message {
+      font-size: 11px;
+      color: #9fb3c8;
+      line-height: 1.5;
+      word-break: break-word;
+    }
+
+    #brand {
+      font-size: 9px;
+      color: #444;
+      margin-top: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    #close-btn {
+      margin-left: auto;
+      background: none;
+      border: none;
+      color: #555;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 0 4px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    #close-btn:hover { color: #fff; }
+  </style>
+</head>
+<body>
+  <div id="notif" class="warning">
+    <div id="icon">🛡</div>
+    <div style="flex:1; min-width:0;">
+      <div id="title">SPACEGuard</div>
+      <div id="message">Bildirim yükleniyor...</div>
+      <div id="brand">SPACEGUARD SOVEREIGN EDITION</div>
+    </div>
+    <button id="close-btn" onclick="window.close()">✕</button>
+  </div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    const ICONS = {
+      danger:  '⚠',
+      success: '✓',
+      info:    'ℹ',
+      warning: '🛡',
+    };
+
+    ipcRenderer.on('update-notification', (event, data) => {
+      const notif   = document.getElementById('notif');
+      const iconEl  = document.getElementById('icon');
+      const titleEl = document.getElementById('title');
+      const msgEl   = document.getElementById('message');
+
+      const type = data.type || 'warning';
+
+      notif.className = type;
+      iconEl.innerText  = ICONS[type] || '🛡';
+      titleEl.innerText = data.title   || 'SPACEGuard';
+      msgEl.innerText   = data.message || '';
+    });
+  </script>
+</body>
+</html>
